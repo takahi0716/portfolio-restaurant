@@ -33,7 +33,7 @@
   }
 }
 
-.information-tab__item:nth-of-type(3){
+.information-tab__item:nth-of-type(3) {
   @include mq(md) {
     font-size: rem(20);
   }
@@ -44,8 +44,6 @@
 }
 
 .information-tab__item span {
-
-
   @include mq(md) {
     padding-left: rem(72);
   }
@@ -53,8 +51,8 @@
 
 .information-tab__item a {
   display: block;
+  width: 100%;
 
-width: 100%;
   @include mq(md) {
     padding-left: rem(72);
   }
@@ -75,14 +73,12 @@ width: 100%;
     top: rem(12);
     left: rem(20);
   }
-
 }
 
 .information-tab__item.is-active {
   background-color: $accent-color;
   box-shadow: rem(4) rem(4) rem(8) 0 rgba(0, 0, 0, 0.25);
   cursor: inherit;
-
 }
 
 .information-tab__item.is-active::before {
