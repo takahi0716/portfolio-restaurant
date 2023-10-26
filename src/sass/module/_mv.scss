@@ -21,8 +21,10 @@
 
 .mv__main {
   font-size: rem(40);
-  letter-spacing: 0.54em;
-  text-indent:0.54em;
+  // letter-spacing: 0.54em;
+  // text-indent:0.54em;
+  letter-spacing: 0.20em;
+  // text-indent:0.54em;
   @include mq(md) {
     font-size: rem(80);
     line-height: 1;

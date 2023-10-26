@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.archive-menu__cards {
+  margin-top: rem(40);
+}
+
+.archive-menu__pagenavi {
+  margin-top: rem(80);
+}
+
+.archive-menu__tab {
+
+  width: 100%;
+
+  @include mq(md) {
+    // max-width: rem(744); 
+  }
+}

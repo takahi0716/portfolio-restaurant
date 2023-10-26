@@ -1,7 +1,7 @@
 <?php
 $home = esc_url(home_url('/'));
 $about = esc_url(home_url('/about-us/'));
-$campaign = esc_url(home_url('/campaign/'));
+$menu = esc_url(home_url('/menu/'));
 $information = esc_url(home_url('/information/'));
 $blog = esc_url(home_url('/blog/'));
 $voice = esc_url(home_url('/voice/'));
@@ -32,8 +32,7 @@ $termsOfService = esc_url(home_url('/terms-of-service/'));
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="<?php echo $home; ?>" class="header__logolink">
-          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/CodeUps-white-logo.svg"
-            alt="codeupsのヘッダーロゴ">
+          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/Oshima-noframe.png" alt="oshimaのロゴ">
         </a>
       </h1>
       <!-- ハンバーガーメニュー -->
@@ -47,9 +46,9 @@ $termsOfService = esc_url(home_url('/terms-of-service/'));
       <div class="header__pc-nav pc-nav js-drawer-menu">
         <ul class="pc-nav__items">
           <li class="pc-nav__item">
-            <a href="<?php echo $campaign; ?>" class="pc-nav__link">
-              <p class="pc-nav__english-title">Campaign</p>
-              <p class="pc-nav__japanese-title">キャンペーン</p>
+            <a href="<?php echo $menu; ?>" class="pc-nav__link">
+              <p class="pc-nav__english-title">Menu</p>
+              <p class="pc-nav__japanese-title">メニュー</p>
             </a>
           </li>
           <li class="pc-nav__item">
@@ -61,7 +60,7 @@ $termsOfService = esc_url(home_url('/terms-of-service/'));
           <li class="pc-nav__item">
             <a href="<?php echo $information; ?>" class="pc-nav__link">
               <p class="pc-nav__english-title">Information</p>
-              <p class="pc-nav__japanese-title">ダイビング情報</p>
+              <p class="pc-nav__japanese-title">サービス情報</p>
             </a>
           </li>
           <li class="pc-nav__item">
@@ -91,7 +90,7 @@ $termsOfService = esc_url(home_url('/terms-of-service/'));
           <li class="pc-nav__item">
             <a href="<?php echo $contact; ?>" class="pc-nav__link">
               <p class="pc-nav__english-title">Contact</p>
-              <p class="pc-nav__japanese-title">お問合せ</p>
+              <p class="pc-nav__japanese-title">お問い合わせ</p>
             </a>
           </li>
         </ul>
@@ -99,9 +98,9 @@ $termsOfService = esc_url(home_url('/terms-of-service/'));
       <!-- ナビゲーション（sp） -->
       <div class="header__sp-nav sp-nav js-sp-nav">
         <div class="sp-nav__inner">
-          <div class="sp-nav__lists lists">
+          <div class="sp-nav__lists">
             <!-- ページリスト -->
-            <?php get_template_part('page-list'); ?>
+            <?php get_template_part('parts/lists'); ?>
           </div>
         </div>
       </div>

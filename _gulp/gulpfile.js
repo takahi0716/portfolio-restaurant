@@ -163,7 +163,7 @@ const browserSyncOption = {
   notify: false,
   // server: "../dist/",
   // WordPressWordPressの場合は下を有効にする。上はコメントアウトする。
-  proxy:"codeups-shop.local",
+  proxy:"oshima-restaurant.local",
 };
 const browserSyncFunc = () => {
   browserSync.init(browserSyncOption);

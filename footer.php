@@ -9,18 +9,18 @@ $contact = esc_url(home_url('/contact/'));
     <div class="contact__company">
       <div class="contact__company-info">
         <div class="contact__logo">
-          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/CodeUps.png" alt="会社のロゴ">
+          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/Oshima-wihte.png" alt="会社のロゴ">
         </div>
         <div class="contact__container">
           <div class="contact__text">
-            <p>沖縄県那覇市1-1</p>
+            <p>東京都新宿区1-1</p>
             <p>TEL:0120-000-0000</p>
             <p>営業時間:8:30-19:00</p>
             <p>定休日:毎週火曜日</p>
           </div>
           <div class="contact__map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3579.1927241401213!2d127.6948673!3d26.22292675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e56bdf425e9c45%3A0xc35f9b53796b25cc!2z44GK44KC44KN44G-44Gh6aeF!5e0!3m2!1sja!2sjp!4v1694857819360!5m2!1sja!2sjp"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2291.371914236573!2d139.69753921528877!3d35.68957656654233!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188cd0d6b1ba1f%3A0x1c32a1f1ecacfdd5!2z5paw5a6_6aeF!5e0!3m2!1sja!2sjp!4v1698010855195!5m2!1sja!2sjp"
               width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
@@ -36,8 +36,9 @@ $contact = esc_url(home_url('/contact/'));
         </p>
         <div class="contact__wrapper">
           <!-- button -->
-          <a href="<?php echo $contact; ?>" class="contact__button button"><span class="button__text">Contact
-              us</span></a>
+          <div class="contact__button">
+            <a href="<?php echo $contact; ?>" class="button"><span class="button__text">Contact us</span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -58,8 +59,7 @@ $contact = esc_url(home_url('/contact/'));
     <div class="footer__wrapper">
       <div class="footer__logo">
         <a href="<?php echo $home; ?>" class="footer__logolink">
-          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/CodeUps-white-logo.svg"
-            alt="codeupsのヘッダーロゴ">
+          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/Oshima-noframe.png" alt="oshimaのロゴ">
         </a>
       </div>
       <div class="footer__sns">
@@ -71,9 +71,9 @@ $contact = esc_url(home_url('/contact/'));
         </a>
       </div>
     </div>
-    <div class="footer__lists lists">
+    <div class="footer__lists">
       <!-- ページリスト -->
-      <?php get_template_part('page-list'); ?>
+      <?php get_template_part('parts/lists'); ?>
     </div>
   </div>
   <p class="footer__copyright">Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</p>

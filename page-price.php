@@ -14,64 +14,74 @@
   </section>
 
   <!-- パンくずリスト -->
-  <?php get_template_part('breadcrumb'); ?>
+  <div class="breadcrumb-layout">
+    <?php get_template_part('parts/breadcrumb'); ?>
+  </div>
 
   <!-- 下層ページ -->
-  <div class="page-price-layout page-price ornament">
+  <div class="page-price-layout page-price">
     <div class="page-price__inner inner">
       <div class="page-price__column one-column">
-        <?php $license_price = SCF::get('license_price_group'); if($license_price[0]['license_course_name']): ?>
-        <div class="page-price__container data-list data-list--sub" id="license">
-          <h2 class=" data-list__title"><span>ライセンス講習</span></h2>
+        <?php $dinner_group = SCF::get_option_meta('price_option', 'dinner');
+        if ($dinner_group[0]['dinner_course_name']) : ?>
+        <div class="page-price__container data-list data-list--sub" id="dinner">
+          <h2 class=" data-list__title"><span>ディナー</span></h2>
           <dl class="data-list__data">
-            <?php foreach ( $license_price as $fields ) :
-        if($fields['license_course_name'] !== "" and $fields['license_course_price']!== ""):
-          ?>
-            <dt><?php echo $fields['license_course_name']; ?></dt>
-            <dd><?php echo $fields['license_course_price']; ?></dd>
-            <?php endif;endforeach; ?>
+            <?php foreach ($dinner_group as $fields) :
+                if ($fields['dinner_course_name'] !== "" and $fields['dinner_course_price'] !== "") :
+              ?>
+            <dt><?php echo $fields['dinner_course_name']; ?></dt>
+            <dd><?php echo $fields['dinner_course_price']; ?></dd>
+            <?php endif;
+              endforeach; ?>
           </dl>
         </div>
         <?php endif; ?>
 
-        <?php $experience_price = SCF::get('experience_price_group'); if($experience_price[0]['experience_course_name']): ?>
-        <div class="page-price__container data-list data-list--sub" id="experience">
-          <h2 class="data-list__title"><span>体験ダイビング</span></h2>
+        <?php $breakfast_group = SCF::get_option_meta('price_option', 'breakfast');
+        if ($breakfast_group[0]['breakfast_course_name']) : ?>
+        <div class="page-price__container data-list data-list--sub" id="breakfast">
+          <h2 class="data-list__title"><span>ランチ</span></h2>
           <dl class="data-list__data">
-            <?php foreach ( $experience_price as $fields ) :
-        if($fields['experience_course_name'] !== "" and $fields['experience_course_price']!== ""):
-          ?>
-            <dt><?php echo $fields['experience_course_name']; ?></dt>
-            <dd><?php echo $fields['experience_course_price']; ?></dd>
-            <?php endif;endforeach; ?>
+            <?php foreach ($breakfast_group as $fields) :
+                if ($fields['breakfast_course_name'] !== "" and $fields['breakfast_course_price'] !== "") :
+              ?>
+            <dt><?php echo $fields['breakfast_course_name']; ?></dt>
+            <dd><?php echo $fields['breakfast_course_price']; ?></dd>
+            <?php endif;
+              endforeach; ?>
           </dl>
         </div>
         <?php endif; ?>
 
-        <?php $fun_price = SCF::get('fun_price_group'); if($fun_price[0]['fun_course_name']): ?>
-        <div class="page-price__container data-list data-list--sub" id="fun">
-          <h2 class="data-list__title"><span>ファンダイビング</span></h2>
+        <?php $launch_group = SCF::get_option_meta('price_option', 'launch');
+        if ($launch_group[0]['launch_course_name']) : ?>
+        <div class="page-price__container data-list data-list--sub" id="launch">
+          <h2 class="data-list__title"><span>ブレックファースト</span></h2>
           <dl class="data-list__data">
-            <?php foreach ( $fun_price as $fields ) :
-        if($fields['fun_course_name'] !== "" and $fields['fun_course_price']!== ""):
-          ?>
-            <dt><?php echo $fields['fun_course_name']; ?></dt>
-            <dd><?php echo $fields['fun_course_price']; ?></dd>
-            <?php endif;endforeach; ?>
+            <?php foreach ($launch_group as $fields) :
+                if ($fields['launch_course_name'] !== "" and $fields['launch_course_price'] !== "") :
+              ?>
+            <dt><?php echo $fields['launch_course_name']; ?></dt>
+            <dd><?php echo $fields['launch_course_price']; ?></dd>
+            <?php endif;
+              endforeach; ?>
           </dl>
         </div>
         <?php endif; ?>
 
-        <?php $special_price = SCF::get('special_price_group'); if($special_price[0]['special_course_name']): ?>
+        <?php $special_group = SCF::get_option_meta('price_option', 'special');
+        if ($special_group[0]['special_course_name']) : ?>
         <div class="page-price__container data-list data-list--sub" id="special">
-          <h2 class=" data-list__title"><span>スペシャルダイビング</span></h2>
+          <h2 class=" data-list__title"><span>スペシャルコース</span></h2>
           <dl class="data-list__data">
-            <?php foreach ( $special_price as $fields ) :
-        if($fields['special_course_name'] !== "" and $fields['special_course_price']!== ""):
-          ?>
+            <?php foreach ($special_group as $fields) :
+                if ($fields['special_course_name'] !== "" and $fields['special_course_price'] !== "") :
+              ?>
             <dt><?php echo $fields['special_course_name']; ?></dt>
             <dd><?php echo $fields['special_course_price']; ?></dd>
-            <?php endif;endforeach; ?>
+            <?php endif;
+              endforeach; ?>
           </dl>
         </div>
         <?php endif; ?>

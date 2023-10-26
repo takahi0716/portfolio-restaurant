@@ -27,6 +27,7 @@
   left: 50%;
   transform: translate(-50%,-50%);
   color: $white;
+  text-shadow: 0px 0px 10px #3f3f3f;
   font-family: $english-font-family;
   font-weight: $normal;
   text-align: center;
@@ -50,7 +51,6 @@
   right: 0;
   top: 0;
   bottom: 0;
-
 }
 
 .sub-mv__image img{

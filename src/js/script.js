@@ -27,7 +27,7 @@ jQuery(function ($) {
   } else {
     space = 40;
   }
-  const swiper = new Swiper(".js-campaign-swiper", {
+  const swiper = new Swiper(".js-menu-swiper", {
     slidesPerView: "auto",
     spaceBetween: space,
     loop: true, // ループ有効
@@ -134,16 +134,15 @@ jQuery(function ($) {
     }
   });
 
-
   // ===============================================================
   // ブログページ アーカイブのアコーディオン
   // ===============================================================
 
-jQuery('.js-sider-accordion').click(function () {
-  jQuery(this).next().slideToggle();
+  jQuery(".js-sider-accordion").click(function () {
+    jQuery(this).next().slideToggle();
 
-  jQuery(this).toggleClass('is-close');
-});
+    jQuery(this).toggleClass("is-close");
+  });
   // ===============================================================
   // よくある質問のアコーディオン
   // ===============================================================
@@ -224,8 +223,7 @@ jQuery('.js-sider-accordion').click(function () {
       isChecked &&
       $("#agree").prop("checked")
     ) {
-      // window.location.href = "../page-thanks.html";  
-
+      // window.location.href = "../page-thanks.html";
     }
   });
 
@@ -322,7 +320,10 @@ var windowSize = jQuery(window).width();
 
 jQuery(window).on("load", function () {
   var webStorage = function () {
-    if (!sessionStorage.getItem("access") && location.pathname === '/codeups-shop/' ) {
+    if (
+      !sessionStorage.getItem("access") &&
+      location.pathname === "/oshima-restaurant/"
+    ) {
       // /*初回アクセス時の処理*/
       sessionStorage.setItem("access", "true"); // sessionStorageにデータを保存
       loadingAnimation();

@@ -1,0 +1,14 @@
+@use "global" as *;
+
+.menu-cards {}
+
+.menu-cards__item {}
+
+.menu-cards__item+.menu-cards__item {
+  margin-left: rem(24);
+
+  @include mq(md) {
+    margin-left: rem(40);
+  }
+
+}

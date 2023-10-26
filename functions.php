@@ -68,7 +68,7 @@ function change_posts_per_page($query)
 {
   if (is_admin() || !$query->is_main_query())
     return;
-  if ($query->is_archive(array('campaign'))) { //カスタム投稿タイプを指定
+  if ($query->is_archive(array('menu'))) { //カスタム投稿タイプを指定
     $query->set('posts_per_page', '4'); //表示件数を指定(全部表示したい場合は-1)
   }
   if ($query->is_archive(array('voice'))) { //カスタム投稿タイプを指定
@@ -111,7 +111,6 @@ function setPostViews($postID)
     $count++;
     update_post_meta($postID, $count_key, $count);
   }
-
 }
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
@@ -155,7 +154,7 @@ function filter_wpcf7_form_tag($scanned_tag, $replace)
       global $post;
       $args = array(
         'posts_per_page' => -1,
-        'post_type' => 'campaign',
+        'post_type' => 'menu',
         'order' => 'DESC',
       );
 
@@ -185,6 +184,41 @@ function remove_protected($title)
 
 // Contact Form 7で自動挿入されるPタグ、brタグを削除
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
-function wpcf7_autop_return_false() {
+function wpcf7_autop_return_false()
+{
   return false;
 }
+
+/**
+ * @param string $page_title ページのtitle属性値
+ * @param string $menu_title 管理画面のメニューに表示するタイトル
+ * @param string $capability メニューを操作できる権限（manage_options とか）
+ * @param string $menu_slug オプションページのスラッグ。ユニークな値にすること。
+ * @param string|null $icon_url メニューに表示するアイコンの URL
+ * @param int $position メニューの位置
+ */
+
+SCF::add_options_page(
+  'ギャラリー',
+  'ギャラリーの画像',
+  'manage_options',
+  'gallery',
+  'dashicons-format-gallery',
+  7
+);
+SCF::add_options_page(
+  '料金一覧',
+  '料金一覧',
+  'manage_options',
+  'price_option',
+  'dashicons-money-alt',
+  7
+);
+SCF::add_options_page(
+  'よくある質問',
+  'よくある質問',
+  'manage_options',
+  'faq',
+  'dashicons-editor-help',
+  8
+);

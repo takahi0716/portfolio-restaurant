@@ -14,10 +14,11 @@
 .information-tab__item {
   padding: rem(10) rem(16);
   box-shadow: rem(2) rem(2) rem(4) 0 rgba(0, 0, 0, 0.25);
-  background-color: #DDF0F1;
+  background-color: #f1e5dd;
   text-align: center;
   cursor: pointer;
   display: flex;
+  align-items: center;
   font-size: rem(14);
   color: $accent-color;
   justify-content: center;
@@ -29,6 +30,12 @@
     box-shadow: none;
     text-align: right;
     font-size: rem(24);
+  }
+}
+
+.information-tab__item:nth-of-type(3){
+  @include mq(md) {
+    font-size: rem(20);
   }
 }
 
@@ -58,7 +65,7 @@ width: 100%;
 
   @include mq(md) {
     display: block;
-    background-image: url(../../assets/images/common/ocean_sea_icon1.png);
+    background-image: url(../../assets/images/common/beef_color.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -66,7 +73,7 @@ width: 100%;
     height: rem(64);
     position: absolute;
     top: rem(12);
-    left: rem(14);
+    left: rem(20);
   }
 
 }
@@ -80,7 +87,7 @@ width: 100%;
 
 .information-tab__item.is-active::before {
   @include mq(md) {
-    background-image: url(../../assets/images/common/ocean_sea_icon.png);
+    background-image: url(../../assets/images/common/beef_white.png);
   }
 }
 

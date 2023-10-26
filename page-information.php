@@ -14,7 +14,9 @@
   </section>
 
   <!-- パンくずリスト -->
-  <?php get_template_part('breadcrumb'); ?>
+  <div class="breadcrumb-layout">
+    <?php get_template_part('parts/breadcrumb'); ?>
+  </div>
 
   <!-- 下層ページ -->
   <section class="information-sub page-information-layout ornament">
@@ -22,53 +24,54 @@
       <div class="information-sub__content">
         <ul class="information-sub__tab information-tab">
           <li class="information-tab__item js-tab-trigger is-active" data-id="tab01">
-            <span class="information-tab__text">ライセンス<br class="u-mobile">講習</span>
+            <span class="information-tab__text">ディナー</span>
           </li>
           <li class="information-tab__item js-tab-trigger" data-id="tab02">
-            <span>体験<br class="u-mobile">ダイビング</span>
+            <span>ランチ</span>
           </li>
           <li class="information-tab__item js-tab-trigger" data-id="tab03">
-            <span>ファン<br class="u-mobile">ダイビング</span>
+            <span>ブレックファースト</span>
           </li>
         </ul>
         <div class="information-sub__container">
           <div class="information-sub__item information-item js-tab-target is-show" data-tab="tab01">
             <div class="information-item__body">
               <h2 class="information-item__title">
-                ライセンス講習
+                ディナー
               </h2>
               <p class="information-item__text">
-                泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします！スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう！
+                夕暮れの優美な雰囲気の中、私たちのディナーは、シェフの芸術的な技巧が光る繊細な一皿へと昇華します。新鮮なシーフード、希少な和牛、季節の最高の食材を使用した料理は、五感を刺激し、舌を魅了します。シャンパンやワインと共に、至福の夜をお楽しみください。
               </p>
             </div>
             <div class="information-item__image">
-              <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/license.jpg" alt="インフォメーション1の画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/dinner.jpg" alt="ディナーの画像">
             </div>
           </div>
           <div class="information-sub__item information-item js-tab-target" data-tab="tab02">
             <div class="information-item__body">
               <h2 class="information-item__title">
-                体験ダイビング
+                ランチ
               </h2>
               <p class="information-item__text">
-                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                忙しい日常の中でほっと一息。私たちのランチは、軽やかな前菜、ヘルシーなサラダ、心温まるスープなど、バラエティ豊かなメニューで構成されています。新鮮な食材の恩恵を感じながら、素晴らしいランチタイムをお過ごしください。
               </p>
             </div>
             <div class="information-item__image">
-              <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/gallery5.jpg" alt="インフォメーション2の画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/launch.jpg" alt="インフォメーション2の画像">
             </div>
           </div>
           <div class="information-sub__item information-item js-tab-target" data-tab="tab03">
             <div class="information-item__body">
               <h2 class="information-item__title">
-                ファンダイビング
+                ブレックファースト
               </h2>
               <p class="information-item__text">
-                ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意！
+                朝の静寂の中、新たな一日を祝福するひととき。私たちのブレックファーストは、新鮮なフルーツ、ふんわり焼き上げたクロワッサン、豪華なエッグベネディクトなど、心地よい朝の目覚めをお届けします。上質なコーヒーとともに、贅沢なスタートをご体験ください。
               </p>
             </div>
             <div class="information-item__image">
-              <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/gallery3.jpg" alt="インフォメーション3の画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/breakfast.jpg"
+                alt="インフォメーション3の画像">
             </div>
           </div>
         </div>
