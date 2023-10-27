@@ -12,7 +12,8 @@ $contact = esc_url(home_url('/contact/'));
   <section class="sub-mv">
     <picture class="sub-mv__image">
       <!-- ↓幅768px以下で表示↓ -->
-      <source srcset="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/blog-sp.jpg" media="(max-width: 767px)" />
+      <source srcset="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/blog-sp.jpg"
+        media="(max-width: 767px)" />
       <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
       <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/blog-pc.jpg" alt="ダイバーの写真">
     </picture>
@@ -36,9 +37,9 @@ $contact = esc_url(home_url('/contact/'));
             <?php if (have_posts()) :
               while (have_posts()) :
                 the_post(); ?>
-                <div class="article-cards__item">
-                  <?php get_template_part('parts/article-card'); ?>
-                </div>
+            <div class="article-cards__item">
+              <?php get_template_part('parts/article-card'); ?>
+            </div>
             <?php endwhile;
             endif; ?>
           </div>
@@ -51,9 +52,6 @@ $contact = esc_url(home_url('/contact/'));
         <!-- サイドバー -->
         <div class="columns__sideber">
           <?php get_template_part('parts/sidebar'); ?>
-        </div>
-        <div class="breadcrumb-layout">
-          <?php get_template_part('parts/breadcrumb'); ?>
         </div>
       </div>
     </div>
