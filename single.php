@@ -7,10 +7,9 @@
   <!--サブメインビュー -->
   <section class="sub-mv">
     <picture class="sub-mv__image">
-      <!-- ↓幅768px以下で表示↓ -->
-      <source srcset="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/blog-sp.jpg"
-        media="(max-width: 767px)" />
-      <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
+
+      <source srcset="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/blog-sp.jpg" media="(max-width: 767px)" />
+
       <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/blog-pc.jpg" alt="ダイバーの写真">
     </picture>
     <h1 class="sub-mv__title">blog</h1>
@@ -31,9 +30,9 @@
             <h2 class="single-article__title"><?php the_title(); ?></h2>
             <div class="single-article__thumbnail">
               <?php if (get_the_post_thumbnail()) : ?>
-              <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title() ?>のアイキャッチ画像">
+                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title() ?>のアイキャッチ画像">
               <?php else : ?>
-              <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/no-image.jpg" alt="noimage">
+                <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/no-image.jpg" alt="noimage">
               <?php endif; ?>
 
             </div>
@@ -41,7 +40,7 @@
               <?php if (have_posts()) :
                 while (have_posts()) :
                   the_post(); ?>
-              <?php the_content(); ?>
+                  <?php the_content(); ?>
               <?php endwhile;
               endif; ?>
             </div>
@@ -59,10 +58,10 @@
               }
               ?>
               <?php if (!empty($prev)) : ?>
-              <a class="previouspostslink" rel="prev" href="<?php echo $prev_url; ?>"></a>
+                <a class="previouspostslink" rel="prev" href="<?php echo $prev_url; ?>"></a>
               <?php endif; ?>
               <?php if (!empty($next)) : ?>
-              <a class="nextpostslink" rel="next" href="<?php echo $next_url; ?>"></a>
+                <a class="nextpostslink" rel="next" href="<?php echo $next_url; ?>"></a>
               <?php endif; ?>
 
             </div>

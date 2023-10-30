@@ -48,7 +48,7 @@ $contact = esc_url(home_url('/contact/'));
 <!--to-topボタン -->
 <div class="to-top">
   <a href="#top" class="to-top__link">
-    <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/arrow-button.png" alt="ページの一番上に戻るボタン">
+    <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/topbutton.svg" alt="ページの一番上に戻るボタン">
   </a>
 </div>
 </main>

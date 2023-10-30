@@ -38,13 +38,14 @@ $privacypolicy = esc_url(home_url('/privacypolicy/'));
         if ($fields['sp_mv_image'] !== "" and $fields['pc_mv_image'] !== "") :
       ?>
 
-          <picture class="slide__image">
-            <!-- ↓幅768px以下で表示↓ -->
-            <source srcset="<?php echo wp_get_attachment_url($fields['sp_mv_image']); ?>" media="(max-width: 767px)" />
-            <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
-            <img src="<?php echo wp_get_attachment_url($fields['pc_mv_image']); ?>" alt="<?php echo $fields['alt-text']; ?>">
-          </picture>
-        <?php endif; ?>
+      <picture class="slide__image">
+
+        <source srcset="<?php echo wp_get_attachment_url($fields['sp_mv_image']); ?>" media="(max-width: 767px)" />
+
+        <img src="<?php echo wp_get_attachment_url($fields['pc_mv_image']); ?>"
+          alt="<?php echo $fields['alt-text']; ?>">
+      </picture>
+      <?php endif; ?>
       <?php endforeach; ?>
     </div>
     <div class="mv__title">
@@ -88,52 +89,52 @@ $privacypolicy = esc_url(home_url('/privacypolicy/'));
           if ($the_view_query->have_posts()) :
             while ($the_view_query->have_posts()) : $the_view_query->the_post();
           ?>
-              <div class="menu__cards swiper-slide">
-                <!-- menu-card -->
-                <div class="menu__card">
-                  <div class="menu-card">
-                    <figure class="menu-card__img">
-                      <?php if (get_the_post_thumbnail()) : ?>
-                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title() ?>の画像">
-                      <?php else : ?>
-                        <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/no-image.jpg" alt="noimage">
-                      <?php endif; ?>
-                    </figure>
-                    <div class="menu-card__inner">
-                      <div class="menu-card__body">
-                        <?php
+          <div class="menu__cards swiper-slide">
+            <!-- menu-card -->
+            <div class="menu__card">
+              <div class="menu-card">
+                <figure class="menu-card__img">
+                  <?php if (get_the_post_thumbnail()) : ?>
+                  <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title() ?>の画像">
+                  <?php else : ?>
+                  <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/no-image.jpg" alt="noimage">
+                  <?php endif; ?>
+                </figure>
+                <div class="menu-card__inner">
+                  <div class="menu-card__body">
+                    <?php
                         $terms = get_the_terms($post->ID, 'menu_category');
                         if ($terms) { ?>
-                          <div class="menu-card__category">
+                    <div class="menu-card__category">
 
-                            <?php echo $terms[0]->name; ?>
+                      <?php echo $terms[0]->name; ?>
 
-                          </div>
-                        <?php } ?>
-                        <h3 class="menu-card__title "><?php the_title(); ?></h3>
-                      </div>
-                      <div class="menu-card__price">
-                        <p class="menu-card__person">
-                          期間限定
-                        </p>
-                        <p class="menu-card__price-text">
-                          <?php
+                    </div>
+                    <?php } ?>
+                    <h3 class="menu-card__title "><?php the_title(); ?></h3>
+                  </div>
+                  <div class="menu-card__price">
+                    <p class="menu-card__person">
+                      期間限定
+                    </p>
+                    <p class="menu-card__price-text">
+                      <?php
                           $price_group = get_field('menu_price-group');
                           if ($price_group) :
                             $previous_price = $price_group['previous_price'];
                             $current_price = $price_group['current_price'];
                           ?>
-                            <span class="menu-card__price-previous"><?php echo $previous_price; ?></span>
-                            <span class="menu-card__price-current"><?php echo $current_price; ?></span>
-                          <?php endif; ?>
-                        </p>
-                      </div>
-                    </div>
+                      <span class="menu-card__price-previous"><?php echo $previous_price; ?></span>
+                      <span class="menu-card__price-current"><?php echo $current_price; ?></span>
+                      <?php endif; ?>
+                    </p>
                   </div>
                 </div>
               </div>
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
+            </div>
+          </div>
+          <?php endwhile; ?>
+          <?php wp_reset_postdata(); ?>
           <?php endif; ?>
         </div>
       </div>
@@ -157,13 +158,17 @@ $privacypolicy = esc_url(home_url('/privacypolicy/'));
 
       <div class="about__contaner">
         <picture class="about__image-right">
-          <!-- ↓幅768px以下で表示↓ -->
-          <source srcset="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/op1-CYnQUywzBtI-unsplash.jpg" media="(max-width: 767px)" />
-          <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
-          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/op1-CYnQUywzBtI-unsplash.jpg" alt="料理人の写真">
+
+          <source srcset="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/op1-CYnQUywzBtI-unsplash.jpg"
+            media="(max-width: 767px)" />
+
+          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/op1-CYnQUywzBtI-unsplash.jpg"
+            alt="料理人の写真">
         </picture>
         <div class="about__image-left">
-          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/redcharlie-redcharlie1-t-7KEq9M0b0-unsplash.jpg" alt="料理人の写真">
+          <img
+            src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/redcharlie-redcharlie1-t-7KEq9M0b0-unsplash.jpg"
+            alt="料理人の写真">
         </div>
         <div class="about__body">
           <h3 class="about__sub-title">
@@ -239,10 +244,10 @@ $privacypolicy = esc_url(home_url('/privacypolicy/'));
         if ($the_view_query->have_posts()) :
           while ($the_view_query->have_posts()) : $the_view_query->the_post();
         ?>
-            <div class="article-cards__item">
-              <?php get_template_part('parts/article-card'); ?>
-            </div>
-          <?php endwhile; ?>
+        <div class="article-cards__item">
+          <?php get_template_part('parts/article-card'); ?>
+        </div>
+        <?php endwhile; ?>
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>
       </div>
@@ -274,46 +279,38 @@ $privacypolicy = esc_url(home_url('/privacypolicy/'));
         if ($the_view_query->have_posts()) :
           while ($the_view_query->have_posts()) : $the_view_query->the_post();
         ?>
-            <div class="voice-cards__item">
-              <div class="voice-card">
-                <div class="voice-card__header">
-                  <div class="voice-card__wrapper">
-                    <div class="voice-card__container">
-                      <?php
+        <div class="voice-cards__item">
+          <div class="voice-card">
+            <div class="voice-card__header">
+              <div class="voice-card__wrapper">
+                <div class="voice-card__container">
+                  <?php
                       $guset_group = get_field('guest_group');
                       if ($guset_group) :
                         $age = $guset_group['age'];
                         $gender = $guset_group['gender'];
                       ?>
-                        <p class="sidebar-voice__guest"><?php echo $age, '(', $gender, ')'; ?></p>
-                      <?php endif; ?>
-                      <p class="voice-card__category">
-                        <?php
-                        $terms = get_the_terms($post->ID, 'voice_category');
-                        if ($terms) {
-                          echo $terms[0]->name;
-                        }
-                        ?>
-                      </p>
-                    </div>
-                    <h3 class="voice-card__title"><?php the_title(); ?></h3>
-                  </div>
-                  <div class="voice-card__image colorbox js-colorbox">
-                    <?php if (get_the_post_thumbnail()) : ?>
-                      <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title() ?>の画像">
-                    <?php else : ?>
-                      <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/no-image.jpg" alt="noimage">
-                    <?php endif; ?>
-                  </div>
+                  <p class="sidebar-voice__guest"><?php echo $age, '(', $gender, ')'; ?></p>
+                  <?php endif; ?>
                 </div>
-
-                <p class="voice-card__text">
-                  <?php echo wp_trim_words(get_the_content(), 196, '[…]'); ?>
-                </p>
+                <h3 class="voice-card__title"><?php the_title(); ?></h3>
+              </div>
+              <div class="voice-card__image colorbox js-colorbox">
+                <?php if (get_the_post_thumbnail()) : ?>
+                <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title() ?>の画像">
+                <?php else : ?>
+                <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/no-image.jpg" alt="noimage">
+                <?php endif; ?>
               </div>
             </div>
-          <?php endwhile; ?>
-          <?php wp_reset_postdata(); ?>
+
+            <p class="voice-card__text">
+              <?php echo wp_trim_words(get_the_content(), 196, '[…]'); ?>
+            </p>
+          </div>
+        </div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
         <?php endif; ?>
       </div>
       <div class="voice__wrapper">
@@ -332,74 +329,78 @@ $privacypolicy = esc_url(home_url('/privacypolicy/'));
       </div>
       <div class="price__flex">
         <picture class="price__image colorbox js-colorbox">
-          <!-- ↓幅768px以下で表示↓ -->
-          <source srcset="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/volkan-vardar-1H30uRC1plc-unsplash.jpg" media="(max-width: 767px)" />
-          <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
-          <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/volkan-vardar-1H30uRC1plc-unsplash.jpg" alt=黄色い熱帯魚の写真">
+
+          <source
+            srcset="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/volkan-vardar-1H30uRC1plc-unsplash.jpg"
+            media="(max-width: 767px)" />
+
+          <img
+            src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/volkan-vardar-1H30uRC1plc-unsplash.jpg"
+            alt="店内の写真">
         </picture>
         <div class="price__contaner">
           <?php $dinner_group = SCF::get_option_meta('price_option', 'dinner');
           if ($dinner_group[0]['dinner_course_name']) : ?>
-            <div class="price__list data-list">
-              <h3 class="data-list__title"><span>ディナー</span></h3>
-              <dl class="data-list__data">
-                <?php foreach ($dinner_group as $fields) :
+          <div class="price__list data-list">
+            <h3 class="data-list__title"><span>ディナー</span></h3>
+            <dl class="data-list__data">
+              <?php foreach ($dinner_group as $fields) :
                   if ($fields['dinner_course_name'] !== "" and $fields['dinner_course_price'] !== "") :
                 ?>
-                    <dt><?php echo $fields['dinner_course_name']; ?></dt>
-                    <dd><?php echo $fields['dinner_course_price']; ?></dd>
-                <?php endif;
+              <dt><?php echo $fields['dinner_course_name']; ?></dt>
+              <dd><?php echo $fields['dinner_course_price']; ?></dd>
+              <?php endif;
                 endforeach; ?>
-              </dl>
-            </div>
-          <?php endif; ?>
-
-          <?php $breakfast_group = SCF::get_option_meta('price_option', 'breakfast');
-          if ($breakfast_group[0]['breakfast_course_name']) : ?>
-            <div class="price__list data-list">
-              <h3 class="data-list__title"><span>ランチ</span></h3>
-              <dl class="data-list__data">
-                <?php foreach ($breakfast_group as $fields) :
-                  if ($fields['breakfast_course_name'] !== "" and $fields['breakfast_course_price'] !== "") :
-                ?>
-                    <dt><?php echo $fields['breakfast_course_name']; ?></dt>
-                    <dd><?php echo $fields['breakfast_course_price']; ?></dd>
-                <?php endif;
-                endforeach; ?>
-              </dl>
-            </div>
+            </dl>
+          </div>
           <?php endif; ?>
 
           <?php $launch_group = SCF::get_option_meta('price_option', 'launch');
           if ($launch_group[0]['launch_course_name']) : ?>
-            <div class="price__list data-list">
-              <h3 class="data-list__title"><span>ブレックファースト</span></h3>
-              <dl class="data-list__data">
-                <?php foreach ($launch_group as $fields) :
+          <div class="price__list data-list">
+            <h3 class="data-list__title"><span>ランチ</span></h3>
+            <dl class="data-list__data">
+              <?php foreach ($launch_group as $fields) :
                   if ($fields['launch_course_name'] !== "" and $fields['launch_course_price'] !== "") :
                 ?>
-                    <dt><?php echo $fields['launch_course_name']; ?></dt>
-                    <dd><?php echo $fields['launch_course_price']; ?></dd>
-                <?php endif;
+              <dt><?php echo $fields['launch_course_name']; ?></dt>
+              <dd><?php echo $fields['launch_course_price']; ?></dd>
+              <?php endif;
                 endforeach; ?>
-              </dl>
-            </div>
+            </dl>
+          </div>
+          <?php endif; ?>
+
+          <?php $breakfast_group = SCF::get_option_meta('price_option', 'breakfast');
+          if ($breakfast_group[0]['breakfast_course_name']) : ?>
+          <div class="price__list data-list">
+            <h3 class="data-list__title"><span>ブレックファースト</span></h3>
+            <dl class="data-list__data">
+              <?php foreach ($breakfast_group as $fields) :
+                  if ($fields['breakfast_course_name'] !== "" and $fields['breakfast_course_price'] !== "") :
+                ?>
+              <dt><?php echo $fields['breakfast_course_name']; ?></dt>
+              <dd><?php echo $fields['breakfast_course_price']; ?></dd>
+              <?php endif;
+                endforeach; ?>
+            </dl>
+          </div>
           <?php endif; ?>
 
           <?php $special_group = SCF::get_option_meta('price_option', 'special');
           if ($special_group[0]['special_course_name']) : ?>
-            <div class="price__list data-list">
-              <h3 class="data-list__title"><span>スペシャルコース</span></h3>
-              <dl class="data-list__data">
-                <?php foreach ($special_group as $fields) :
+          <div class="price__list data-list">
+            <h3 class="data-list__title"><span>スペシャルコース</span></h3>
+            <dl class="data-list__data">
+              <?php foreach ($special_group as $fields) :
                   if ($fields['special_course_name'] !== "" and $fields['special_course_price'] !== "") :
                 ?>
-                    <dt><?php echo $fields['special_course_name']; ?></dt>
-                    <dd><?php echo $fields['special_course_price']; ?></dd>
-                <?php endif;
+              <dt><?php echo $fields['special_course_name']; ?></dt>
+              <dd><?php echo $fields['special_course_price']; ?></dd>
+              <?php endif;
                 endforeach; ?>
-              </dl>
-            </div>
+            </dl>
+          </div>
           <?php endif; ?>
         </div>
       </div>

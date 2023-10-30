@@ -3,8 +3,11 @@
 .lists {
   display: flex;
   justify-content: space-between;
+  font-size: rem(14);
+
   @include mq(md) {
     justify-content: space-between;
+    font-size: rem(16);
   }
 }
 
@@ -18,22 +21,27 @@
 
 .lists__wrapper:nth-child(2) {
   padding-right: rem(11);
+
   @include mq(md) {
     padding-right: 0;
+
   }
 }
+
 .lists__container {
   @include mq(md) {
     width: 47%;
   }
 }
-.lists__container + .lists__container {
+
+.lists__container+.lists__container {
   margin-top: rem(40);
+
   @include mq(md) {
     margin-top: 0;
   }
 }
 
-.lists__item + .lists__item {
+.lists__item+.lists__item {
   margin-top: rem(40);
 }

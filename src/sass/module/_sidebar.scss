@@ -27,7 +27,7 @@
 .sidebar__archive-item {
   color: $accent-color;
   margin-top: rem(24);
-  font-size: rem(24);
+  font-size: rem(20);
 }
 
 .sidebar__archive-year {
@@ -86,7 +86,7 @@
   height: 0;
   left: 0.3125rem;
   position: absolute;
-  top: 0.625rem;
+  top: rem(6);
   transform: rotate(-90deg);
   transition: 0.3s;
   width: 0;

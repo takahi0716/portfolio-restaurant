@@ -47,50 +47,50 @@ $termsOfService = esc_url(home_url('/terms-of-service/'));
         <ul class="pc-nav__items">
           <li class="pc-nav__item">
             <a href="<?php echo $menu; ?>" class="pc-nav__link">
-              <p class="pc-nav__english-title">Menu</p>
-              <p class="pc-nav__japanese-title">メニュー</p>
+              <span class="pc-nav__english-title">Menu</span>
+              <span class="pc-nav__japanese-title">メニュー</span>
             </a>
           </li>
           <li class="pc-nav__item">
             <a href="<?php echo $about; ?>" class="pc-nav__link">
-              <p class="pc-nav__english-title">About us</p>
-              <p class="pc-nav__japanese-title">私たちについて</p>
+              <span class="pc-nav__english-title">About us</span>
+              <span class="pc-nav__japanese-title">私たちについて</span>
             </a>
           </li>
           <li class="pc-nav__item">
             <a href="<?php echo $information; ?>" class="pc-nav__link">
-              <p class="pc-nav__english-title">Information</p>
-              <p class="pc-nav__japanese-title">サービス情報</p>
+              <span class="pc-nav__english-title">Information</span>
+              <span class="pc-nav__japanese-title">サービス情報</span>
             </a>
           </li>
           <li class="pc-nav__item">
             <a href="<?php echo $blog; ?>" class="pc-nav__link">
-              <p class="pc-nav__english-title">Blog</p>
-              <p class="pc-nav__japanese-title">ブログ</p>
+              <span class="pc-nav__english-title">Blog</span>
+              <span class="pc-nav__japanese-title">ブログ</span>
             </a>
           </li>
           <li class="pc-nav__item">
             <a href="<?php echo $voice; ?>" class="pc-nav__link">
-              <p class="pc-nav__english-title">Voice</p>
-              <p class="pc-nav__japanese-title">お客様の声</p>
+              <span class="pc-nav__english-title">Voice</span>
+              <span class="pc-nav__japanese-title">お客様の声</span>
             </a>
           </li>
           <li class="pc-nav__item">
             <a href="<?php echo $price; ?>" class="pc-nav__link">
-              <p class="pc-nav__english-title">Price</p>
-              <p class="pc-nav__japanese-title">料金一覧</p>
+              <span class="pc-nav__english-title">Price</span>
+              <span class="pc-nav__japanese-title">料金一覧</span>
             </a>
           </li>
           <li class="pc-nav__item">
             <a href="<?php echo $faq; ?>" class="pc-nav__link">
-              <p class="pc-nav__english-title">FAQ</p>
-              <p class="pc-nav__japanese-title">よくある質問</p>
+              <span class="pc-nav__english-title">FAQ</span>
+              <span class="pc-nav__japanese-title">よくある質問</span>
             </a>
           </li>
           <li class="pc-nav__item">
             <a href="<?php echo $contact; ?>" class="pc-nav__link">
-              <p class="pc-nav__english-title">Contact</p>
-              <p class="pc-nav__japanese-title">お問い合わせ</p>
+              <span class="pc-nav__english-title">Contact</span>
+              <span class="pc-nav__japanese-title">お問い合わせ</span>
             </a>
           </li>
         </ul>

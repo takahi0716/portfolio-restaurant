@@ -4,9 +4,9 @@
   <!--サブメインビュー -->
   <section class="sub-mv">
     <picture class="sub-mv__image">
-      <!-- ↓幅768px以下で表示↓ -->
+
       <source srcset="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/sub-sp.jpg" media="(max-width: 767px)" />
-      <!-- ↓上記全て表示条件に当てはまらない場合に表示↓ -->
+
       <img src="<?php echo get_theme_file_uri(); ?>/dist/assets/images/common/sub-pc.jpg" alt="小魚とサンゴの写真">
     </picture>
     <h1 class="sub-mv__title">Terms of Service</h1>

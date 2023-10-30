@@ -9,12 +9,63 @@
   // max-width: rem(280);
   width: 100%;
   height: 100%;
+  position: relative;
+}
+.menu-card::before{
+  content: "";
+  position: absolute;
+  background-image: url(../../assets/images/common/frame_bottom-left.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 70px;
+  height:70px;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-card::after{
+  content: "";
+  position: absolute;
+  background-image: url(../../assets/images/common/frame_bottom-right.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 70px;
+  height:70px;
+  bottom: 0;
+  right: 0;
 }
 
 .menu-card__img {
   padding-top: calc(rem(223) / rem(333) * 100%); //高さ÷幅*100
   position: relative;
 }
+
+.menu-card__img::before{
+  content: "";
+  position: absolute;
+  background-image: url(../../assets/images/common/frame_top-left.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 70px;
+  height:70px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-card__img::after{
+  content: "";
+  position: absolute;
+  background-image: url(../../assets/images/common/frame_top-right.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 70px;
+  height:70px;
+  top: 0;
+  right: 0;
+}
+
 
 .menu-card__img img {
   position: absolute;
@@ -152,6 +203,7 @@
 }
 
 .menu-card__period {
+  font-size: rem(18);
   color: $accent-color;
   font-weight: $bold;
   line-height: 1.1125;

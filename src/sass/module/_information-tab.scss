@@ -25,7 +25,7 @@
   width: 100%;
 
   @include mq(md) {
-    padding: rem(26) 0;
+    padding: rem(20) 0;
     position: relative;
     box-shadow: none;
     text-align: right;
@@ -67,8 +67,8 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    width: rem(64);
-    height: rem(64);
+    width: rem(50);
+    height: rem(50);
     position: absolute;
     top: rem(12);
     left: rem(20);
