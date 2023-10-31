@@ -150,7 +150,7 @@ jQuery(function ($) {
   $(function () {
     $(".js-accordion").on("click", function () {
       $(this).next().toggleClass("is-close");
-      $(this).toggleClass("is-active");
+      $(this).toggleClass("is-close");
     });
   });
   // ===============================================================

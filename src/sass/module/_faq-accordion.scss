@@ -42,11 +42,11 @@
   opacity: 0;
 }
 
-.faq-accordion__question.is-active::before {
+.faq-accordion__question.is-close::before {
   opacity: 1;
 }
 
-.faq-accordion__question.is-active::after {
+.faq-accordion__question.is-close::after {
   transform: rotate(90deg);
 }
 
